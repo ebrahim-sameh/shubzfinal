@@ -82,17 +82,28 @@ WSGI_APPLICATION = 'shubz.wsgi.application'
 #     }
 # }
 
-
 DATABASES = {
-  'default': {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': os.environ.get('QOVERY_POSTGRESQL_Z8C9658A1_DEFAULT_DATABASE_NAME', 'postgres'),
-    'USER': os.environ.get('QOVERY_POSTGRESQL_Z8C9658A1_LOGIN', 'postgres'),
-    'PASSWORD': os.environ.get('QOVERY_POSTGRESQL_Z8C9658A1_PASSWORD'),
-    'HOST': os.environ.get('QOVERY_POSTGRESQL_Z8C9658A1_HOST', 'z8c9658a1-postgresql.zeddf7074.criom.sh'),
-    'PORT': os.environ.get('QOVERY_POSTGRESQL_Z8C9658A1_PORT', 5432),
-  }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
+    }
 }
+
+#
+# DATABASES = {
+#   'default': {
+#     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#     'NAME': os.environ.get('QOVERY_POSTGRESQL_Z8C9658A1_DEFAULT_DATABASE_NAME', 'postgres'),
+#     'USER': os.environ.get('QOVERY_POSTGRESQL_Z8C9658A1_LOGIN', 'postgres'),
+#     'PASSWORD': os.environ.get('QOVERY_POSTGRESQL_Z8C9658A1_PASSWORD'),
+#     'HOST': os.environ.get('QOVERY_POSTGRESQL_Z8C9658A1_HOST', 'z8c9658a1-postgresql.zeddf7074.criom.sh'),
+#     'PORT': os.environ.get('QOVERY_POSTGRESQL_Z8C9658A1_PORT', 5432),
+#   }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -132,4 +143,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
