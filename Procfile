@@ -1,1 +1,1 @@
-web: gunicorn intropage.wsgi
+web: gunicorn shubz.wsgi
